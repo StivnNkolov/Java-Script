@@ -1,6 +1,5 @@
-let a = {}
+let smt = ['John Dan', 'john@john-dan.com', 'JS-CORE']
 
-a.movwe = {}
-console.log(a);
-a.movwe.name = "kaka"
-console.log(a);
+
+let jr = smt.filter(v => v.includes("John"));
+console.log(jr);

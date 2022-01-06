@@ -8,6 +8,15 @@ function toggle() {
         additionalInfoElement.style.display = "none";
         buttonElement.textContent = "More"
     }
-    // additionalInfoElement.style.display = "block";
-
 }
+
+
+function toggle() {
+    let button = document.querySelector('.button');
+    let buttonTextContent = button.textContent;
+    let hidenTextElement = document.querySelector('#extra');
+    
+    
+    button.textContent = buttonTextContent == "More" ? "Less" : "More";
+    hidenTextElement.style.display = buttonTextContent == "More" ? "block" : "none"
+};
