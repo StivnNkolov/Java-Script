@@ -9,5 +9,5 @@ function sumOfNumbers(firstNumber, secondNumber) {
     return result;
 }
 
-console.log(sumOfNumbers('1', '5' ))
+console.log(sumOfNumbers('1', '5'))
 sumOfNumbers('-8', '20');
