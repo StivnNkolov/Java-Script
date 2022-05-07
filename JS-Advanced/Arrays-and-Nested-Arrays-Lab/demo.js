@@ -23,9 +23,34 @@
 // })
 // console.log(b);
 
-let a = ["1" , "2", "3"];
+// let a = ["1" , "2", "3"];
 
-console.log(a.find(function(str){
-    return str === "1";
-}));
-    
+// console.log(a.find(function(str){
+//     return str === "1";
+// }));
+
+// a = [1, 3, 4]
+// console.log(Math.sum(a));
+
+// let a = 5;
+// if (a % 2 != 0) {
+//     console.log(a);
+// }
+
+// function doodo(currRow, currCol) {
+//     let lookarounds = [[2, 3], [2, 3], [4, 6]];
+
+
+
+//     for (let i = 0; i < lookarounds.length; i++) {
+//         let smt = lookarounds[i]
+//         console.log(lookarounds[i]);
+//     };
+// }
+
+// doodo(1, 3)
+
+
+a = NaN
+b = NaN
+console.log(a == b)
