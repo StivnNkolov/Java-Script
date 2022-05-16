@@ -117,7 +117,42 @@ function solve() {
 
    function productsEventHandler(event) {
       let pressedElement = event.target;
-9
+      if (pressedElement.className == 'add-product') {
+         let productTitle = event.currentTarget.querySelector('.product-title').textContent;
+         let productPrice = Number(event.currentTarget.querySelector('.product-line-price').textContent);
+
+         if (!addedProductsList.includes(productTitle)) {
+            addedProductsList.push(productTitle);
+         }
+         fullAmount += productPrice;
+         let stringToShow = `Added ${productTitle} for ${productPrice.toFixed(2)} to the cart.\n`
+         textareaElement.textContent += stringToShow;
+      }
+   }
+
+   function checkoutButtonEventHandler(event) {
+      let stringOfProducts = addedProductsList.join(', ');
+      let checkoutString = `You bought ${stringOfProducts} for ${fullAmount.toFixed(2)}.`
+      textareaElement.textContent += checkoutString;
+      Array.from(document.querySelectorAll('button'))
+         .map(v => v.setAttribute('disabled', 'disabled'));
+   }
+}
+
+function solve() {
+   let productContainerElement = Array.from(document.querySelectorAll('.product'));
+   let checkoutButtonElement = document.querySelector('.checkout');
+   let textareaElement = document.querySelector('textarea');
+
+   let addedProductsList = [];
+   let fullAmount = 0;
+
+   productContainerElement.map(v => v.addEventListener('click', productsEventHandler));
+
+   checkoutButtonElement.addEventListener('click', checkoutButtonEventHandler);
+
+   function productsEventHandler(event) {
+      let pressedElement = event.target;
       if (pressedElement.className == 'add-product') {
          let productTitle = event.currentTarget.querySelector('.product-title').textContent;
          let productPrice = Number(event.currentTarget.querySelector('.product-line-price').textContent);
