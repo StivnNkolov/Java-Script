@@ -34,3 +34,12 @@ function solve(inputString) {
 
     console.log(result);
 }
+
+function solve(inputString) {
+    let regex = /[a-zA-Z0-9]+/gm;
+    let matchedArray = Array.from(inputString.matchAll(regex)).map(v => {
+        return v[0].toUpperCase();
+    }).join(', ')
+
+    console.log(matchedArray);
+}

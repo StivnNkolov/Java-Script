@@ -101,3 +101,17 @@ function validityChecker(x1, y1, x2, y2) {
         console.log(`{${x1}, ${y1}} to {${x2}, ${y2}} is invalid`);
     }
 } 
+
+function solve(x1, y1, x2, y2) {
+    let firstCase = Math.sqrt((0 - x1) ** 2 + (0 - y1) ** 2);
+    let secondCase = Math.sqrt((x2 - 0) ** 2 + (y2 - 0) ** 2);
+    let thirdCase = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+
+    firstCase = Number.isInteger(firstCase) ? 'valid' : 'invalid';
+    secondCase = Number.isInteger(secondCase) ? 'valid' : 'invalid';
+    thirdCase = Number.isInteger(thirdCase) ? 'valid' : 'invalid';
+
+    console.log(`{${x1}, ${y1}} to {0, 0} is ${firstCase}`);
+    console.log(`{${x2}, ${y2}} to {0, 0} is ${secondCase}`);
+    console.log(`{${x1}, ${y1}} to {${x2}, ${y2}} is ${thirdCase}`);
+}

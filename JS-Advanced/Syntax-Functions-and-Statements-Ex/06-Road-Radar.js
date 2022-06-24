@@ -69,6 +69,35 @@ function solve(speed, cityArea) {
 
 }
 
+function solve(speed, area) {
+    let areaObject = {
+        motorway: 130,
+        interstate: 90,
+        city: 50,
+        residential: 20,
+    }
+
+    let speedLimit = areaObject[area];
+    let speedDifference = speed - speedLimit;
+    let ticketValue = getSpeedingValue(speedDifference);
+
+    if (speedDifference <= 0) {
+        console.log(`Driving ${speed} km/h in a ${areaObject[area]} zone`);
+    } else {
+        console.log(`The speed is ${speedDifference} km/h faster than the allowed speed of ${areaObject[area]} - ${ticketValue}`)
+    }
+
+    function getSpeedingValue(speedDiff) {
+        if (speedDiff <= 20) {
+            return 'speeding';
+        } else if (speedDiff <= 40) {
+            return 'excessive speeding';
+        } else {
+            return 'reckless driving';
+        }
+    }
+}
+
 console.log(solve(40, 'city'));
 console.log(solve(21, 'residential'));
 console.log(solve(120, 'interstate'));

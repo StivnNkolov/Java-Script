@@ -51,5 +51,34 @@ function solve(...elements) {
 
 }
 
+function solve(inputStringNumber, ...params) {
+    let workingObject = {
+        number: Number(inputStringNumber),
+        chop() {
+            this.number = this.number / 2;
+        },
+        dice() {
+            this.number = Math.sqrt(this.number);
+        },
+        spice() {
+            this.number = this.number += 1;
+
+        },
+        bake() {
+            this.number = this.number * 3;
+
+        },
+        fillet() {
+            this.number = this.number - (this.number * 0.2);
+        },
+    }
+
+    for (let el of params) {
+        workingObject[el]()
+        console.log(workingObject.number)
+    }
+
+}
+
 solve('32', 'chop', 'chop', 'chop', 'chop', 'chop');
 // solve('9', 'dice', 'spice', 'chop', 'bake', 'fillet');

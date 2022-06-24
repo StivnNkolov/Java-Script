@@ -69,5 +69,19 @@
 // console.log(Math.pow(a, 2));
 
 
-let a = 'hello';
-console.log(a.toUpperCase());
+    // let a = 'hello';
+    // console.log(a.toUpperCase());
+
+// let smt = '2';
+// console.log(smt.padStart(2, 0))
+
+let osmeString = 'Hi, how are you?'
+let regex = /[a-zA-Z]+/gm;
+console.log(osmeString.matchAll(regex));
+let smt = Array.from(osmeString.matchAll(regex)).map(v => {
+    return v[0];
+});
+
+console.log(smt.map(v => {
+    return v.toUpperCase()
+}));
