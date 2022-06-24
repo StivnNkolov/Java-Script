@@ -61,5 +61,30 @@ function solve(number1, number2, operant) {
 
     console.log(calculations[operant]);
 }
+
+function solve(number1, number2, operator) {
+    let smtElse = {
+        '+': function (num1, num2) {
+            return num1 + num2;
+        },
+        '-': function (num1, num2) {
+            return num1 - num2;
+        },
+        '*': function (num1, num2) {
+            return num1 * num2;
+        },
+        '/': function (num1, num2) {
+            return num1 / num2;
+        },
+        '%': function (num1, num2) {
+            return num1 % num2;
+        },
+        '**': function (num1, num2) {
+            return num1 ** num2;
+        },
+    }
+
+    console.log(smtElse[operator](number1, number2));
+}
 solve(5, 6, '+')
 solve(3, 5.5, '*')

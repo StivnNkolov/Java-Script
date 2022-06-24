@@ -36,4 +36,21 @@ function solve(inputArray) {
     console.log(concatValue);
 }
 
+function solve(inputArray) {
+    let sum = inputArray.reduce((pv, cv) => {
+        return pv += cv;
+    }, 0)
+
+    let inverseSum = inputArray.reduce((pv, cv) => {
+        return pv += 1 / cv;
+    }, 0)
+
+    let concatValue = inputArray.join('');
+
+    console.log(sum);
+    console.log(inverseSum);
+    console.log(concatValue);
+
+}
+
 solve([2, 4, 8, 16])
