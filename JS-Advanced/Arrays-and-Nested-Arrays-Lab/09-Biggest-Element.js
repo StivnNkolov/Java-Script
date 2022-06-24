@@ -26,6 +26,14 @@ function solve(inputMatrix) {
 
 }
 
+function solve(inputMatrix) {
+    let smt = Math.max(...inputMatrix.map(v => {
+        return Math.max(...v)
+    }))
+
+    return smt;
+}
+
 console.log(solve([[20, 50, 10],
 [8, 33, 145]]));
 console.log(solve([[3, 5, 7, 12],

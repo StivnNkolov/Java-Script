@@ -43,4 +43,26 @@ function solve(num1, num2) {
     return sequenceOfNumbers;
 }
 
+
+function solve(n, k) {
+    let resultArray = [1];
+
+    for (let i = 1; i < n; i++) {
+        let middleValue = 0;
+        if (resultArray.length < k) {
+            middleValue = resultArray.reduce((pv, cv) => {
+                return pv += cv;
+            }, 0)
+        } else {
+            middleValue = resultArray.slice(-k).reduce((pv, cv) => {
+                return pv += cv;
+            }, 0)
+        }
+
+        resultArray.push(middleValue);
+    }
+
+    return resultArray;
+}
+
 console.log(solve(8, 2));

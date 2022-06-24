@@ -25,5 +25,19 @@ function solve(inputArray) {
         return result;
 }
 
+function solve(inputArray) {
+    let result = inputArray
+        .reduce((pv, cv, ci, arr) => {
+            if (ci % 2 != 0) {
+                pv.push(cv * 2)
+            }
+            return pv;
+        }, [])
+        .reverse()
+        .join(' ');
+
+    return result;
+}
+
 console.log(solve([10, 15, 20, 25]));
 console.log(solve([3, 0, 10, 4, 7, 3]));

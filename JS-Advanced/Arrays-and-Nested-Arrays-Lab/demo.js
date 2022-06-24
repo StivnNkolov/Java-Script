@@ -51,6 +51,10 @@
 // doodo(1, 3)
 
 
-a = NaN
-b = NaN
-console.log(a == b)
+// a = NaN
+// b = NaN
+// console.log(a == b)
+
+let someArray = [1, 2, 3, 4];
+
+console.log(Math.max(...someArray));
