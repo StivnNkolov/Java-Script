@@ -32,22 +32,16 @@
 // }
 
 
-function solve(inputArray, number) {
-
-
-    let realRotations = number % inputArray.length;
-
-    if (number <= inputArray.length) {
-        realRotations = number;
+function solve(inputArray, rotations) {
+    if (rotations > inputArray.length) {
+        rotations = rotations % inputArray.length;
     }
 
-
-    for (let i = 1; i <= realRotations; i++) {
-        let currentElement = inputArray.pop();
-        inputArray.unshift(currentElement);
+    for (let i = 1; i <= rotations; i++) {
+        inputArray.unshift(inputArray.pop());
     }
 
-    console.log(inputArray.join(" "));
+    console.log(inputArray.join(' '));
 }
 
 solve(

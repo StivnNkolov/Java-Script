@@ -6,5 +6,9 @@
 
 // console.log(smt);
 
-let a = [];
-console.log(a.pop());
+// let a = [];
+// console.log(a.pop());
+
+let someArray = [];
+
+

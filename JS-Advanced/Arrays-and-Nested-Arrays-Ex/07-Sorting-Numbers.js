@@ -10,7 +10,6 @@
 
 //         newArray.push(smallest);
 //         newArray.push(biggest);
-//         лет = 2;
 
 //     }
 //     return newArray;
@@ -38,6 +37,18 @@ function solve(inputArray) {
         };
     }
     return resultArray;
+}
+
+function solve(inputArray) {
+    let sortedArray = inputArray.sort((a, b) => a - b)
+
+    let resArray = [];
+    while (sortedArray.length > 0) {
+        resArray.push(sortedArray.shift());
+        resArray.push(sortedArray.pop());
+    }
+
+    return resArray;
 }
 
 console.log(solve(

@@ -102,6 +102,32 @@ function solve(inputMatrix) {
     console.log(smt);
 }
 
+
+function solve(inputMatrix) {
+    let columns = [];
+    let calcNumbers = new Set();
+
+    for (let row = 0; row < inputMatrix.length; row++) {
+        let currentColumnSum = 0;
+        let currentRowSum = 0;
+
+        for (let col = 0; col < inputMatrix.length; col++) {
+            currentColumnSum += inputMatrix[col][row];
+            currentRowSum += inputMatrix[row][col];
+
+        }
+
+        calcNumbers.add(currentColumnSum);
+        calcNumbers.add(currentRowSum);
+    }
+
+    // console.log(calcNumbers)
+    if (calcNumbers.size == 1) {
+        return true;
+    }
+    return false;
+}
+
 // solve([
 //     [4, 5, 6],
 //     [6, 5, 4],
