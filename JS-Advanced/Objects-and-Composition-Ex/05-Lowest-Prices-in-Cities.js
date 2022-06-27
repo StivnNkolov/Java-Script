@@ -59,6 +59,36 @@ function solve(inputArray) {
     }
 }
 
+function solve(inputArray) {
+    let productsObj = {
+
+    };
+    for (let el of inputArray) {
+        let [townName, productName, productPrice] = el.split(' | ');
+        productPrice = Number(productPrice);
+
+        if (productsObj[productName] == undefined) {
+            productsObj[productName] = {
+                price: Number.MAX_SAFE_INTEGER,
+                town: townName,
+            }
+        }
+
+        if (productPrice < productsObj[productName].price) {
+            productsObj[productName].price = productPrice;
+            productsObj[productName].town = townName;
+        }
+    }
+    let result = Object.keys(productsObj)
+        .map(v => {
+            return `${v} -> ${productsObj[v].price} (${productsObj[v].town})`
+        })
+        .join('\n')
+
+
+    console.log(result);
+}
+
 solve([
     'Sample Town | Sample Product | 1000',
     'New York | Sample Product | 1000',

@@ -25,6 +25,20 @@ function solve(inputArray) {
     console.log(resultObject);
 }
 
+
+function solve(inputArray) {
+    let result = inputArray.reduce((pv, cv, ci, arr) => {
+        if (ci % 2 == 0) {
+            pv[cv] = null;
+        } else {
+            pv[arr[ci - 1]] = Number(cv);
+        }
+        return pv;
+    }, {})
+
+    console.log(result)
+}
+
 solve(
     ['Yoghurt', '48', 'Rise', '138', 'Apple', '52']
 );

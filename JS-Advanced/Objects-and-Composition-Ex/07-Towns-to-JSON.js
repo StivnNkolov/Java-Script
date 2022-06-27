@@ -13,6 +13,35 @@ function toJSON(inputData) {
 
 };
 
+function solve(inputArray) {
+    let tableValues = inputArray.map((v, i) => {
+        let tmp = v.split(' | ')
+
+        tmp[0] = tmp[0].slice(2)
+        tmp[2] = tmp[2].slice(0, tmp[2].length - 2)
+        if (i != 0) {
+            tmp[1] = Number(tmp[1]).toFixed(2);
+            tmp[2] = Number(tmp[2]).toFixed(2);
+        }
+        return tmp;
+    })
+
+    let tableHeaders = tableValues.shift();
+    let smt = tableValues.map(v => {
+        v = v.reduce((pv, cv, ci, arr) => {
+            let currHeader = tableHeaders[ci]
+            if (ci != 0) {
+                cv = Number(cv);
+            }
+            pv[currHeader] = cv;
+            return pv;
+        }, {})
+
+        return v
+    })
+    console.log(JSON.stringify(smt));
+}
+
 
 // toJSON(['| Town | Latitude | Longitude |',
 //     '| Sofia | 42.696552 | 23.32601 |',
