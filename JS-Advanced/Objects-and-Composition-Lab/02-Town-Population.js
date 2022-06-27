@@ -77,3 +77,29 @@ solve([
     'Mexico City <-> 23401925',
     'Istanbul <-> 1000'
 ]);
+
+
+function solve(inputArray) {
+
+    console.log(
+        Object.entries(inputArray
+            .reduce(reducer, {}))
+            .map(mapper)
+            .join('\n')
+    )
+
+    function reducer(pv, cv, ci, arr) {
+        let [name, pop] = cv.split(' <-> ');
+        pop = Number(pop);
+        if (!pv.hasOwnProperty(name)) {
+            pv[name] = 0;
+        }
+
+        pv[name] += pop;
+        return pv;
+    }
+
+    function mapper(v) {
+        return `${v[0]} : ${v[1]}`
+    }
+}
